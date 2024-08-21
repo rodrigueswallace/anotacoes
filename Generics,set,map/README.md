@@ -18,6 +18,7 @@ public class Caixa<T> {
       return item;
   }
 }
+````
 
 Aqui, a classe Caixa pode armazenar qualquer tipo de objeto, garantindo que o tipo correto seja utilizado em tempo de compilação.
 
@@ -35,6 +36,7 @@ Set<String> conjunto = new HashSet<>();
 conjunto.add("A");
 conjunto.add("B");
 conjunto.add("A"); // Duplicado, não será adicionado
+````
 
 3. **Map**
 
@@ -49,6 +51,7 @@ Map<String, Integer> mapa = new HashMap<>();
 mapa.put("Alice", 25);
 mapa.put("Bob", 30);
 Integer idade = mapa.get("Alice"); // Retorna 25
+````
 
 
 ## Tipos Coringa
@@ -65,6 +68,7 @@ public void imprimirLista(List<?> lista) {
       System.out.println(obj);
     }
 }
+````
 
 Aqui, List<?> pode ser uma lista de qualquer tipo.
 
@@ -87,12 +91,14 @@ public void processar(List<? extends Number> numeros) {
       System.out.println(num);
   }
 }
+````
 
 Exemplo com ? super:
 ```Java
 public void adicionarNumero(List<? super Integer> lista) {
     lista.add(10);
 }
+````
 
 
 ** Generics Delemitado **
@@ -108,6 +114,7 @@ Exemplo com Limite Superior:
 public <T extends Number> void imprimirNumeros(T numero) {
   System.out.println(numero);
 }
+````
 
 Aqui, T pode ser Integer, Double, ou qualquer outra subclasse de Number.
 
@@ -116,6 +123,7 @@ Exemplo com Limite Inferior:
 public void adicionarNumero(List<? super Integer> lista) {
   lista.add(10);
 }
+````
 
 Aqui, a lista pode aceitar Integer ou qualquer superclasse de Integer, como Number ou Object.
 
@@ -148,6 +156,7 @@ public class Pessoa {
         return Objects.hash(nome, idade);
     }
 }
+````
 
 Neste exemplo, equals e hashCode são sobrescritos para garantir que dois objetos Pessoa sejam comparados corretamente e armazenados de forma eficiente em coleções baseadas em hash.
 
@@ -187,4 +196,4 @@ A principal diferença entre Set e ArrayList em Java está em como eles tratam o
 
 
 
-````
+
