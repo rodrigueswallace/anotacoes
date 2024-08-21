@@ -1,5 +1,21 @@
 # Generics,set,map
 
+**Resumo simples sobre cada um dos conceitos:**
+
+- Generics: Em Java, os Generics permitem que você crie classes, interfaces e métodos que funcionam com qualquer tipo de dado, mantendo a segurança de tipos. Em vez de especificar um tipo específico, você usa um placeholder (por exemplo, <T>) que será substituído por um tipo real quando a classe ou o método for usado.
+
+- Set: Set é uma coleção que não permite elementos duplicados. Ele só armazena valores únicos e não mantém uma ordem específica dos elementos.
+
+- Map: Map é uma coleção que associa chaves a valores. Cada chave deve ser única, mas diferentes chaves podem mapear para o mesmo valor. Um exemplo é o HashMap, que é muito usado para implementar dicionários.
+
+- Generics delimitado: É quando você define um limite superior ou inferior para os tipos que podem ser usados em um Generics. Por exemplo, List<? extends Number> aceita qualquer tipo que seja uma subclasse de Number.
+
+- Tipos coringa: São usados com ? para indicar um tipo desconhecido. Por exemplo, List<?> significa uma lista de algum tipo desconhecido.
+
+- Coringa delimitado: Um coringa delimitado impõe restrições no tipo que o ? pode assumir. Pode ser delimitado por um tipo superior (<? extends Tipo>) ou inferior (<? super Tipo>), controlando quais tipos podem ser usados.
+
+- HashCode e equals: hashCode e equals são métodos usados para comparar objetos em Java. O equals verifica se dois objetos são iguais, enquanto o hashCode retorna um número inteiro que representa o objeto. Se dois objetos são iguais, eles devem ter o mesmo hashCode. Isso é importante para coleções como HashSet e HashMap, onde a eficiência depende desses métodos.
+
 ## o que são Generics,set e map ?
 
 1. **Generics**
