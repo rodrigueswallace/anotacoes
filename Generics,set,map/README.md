@@ -79,9 +79,11 @@ Aqui, List<?> pode ser uma lista de qualquer tipo.
 UM coringa delimitado é uma versão específica dos tipos coringa. Eles permitem que você especifique limites para os tipos que podem ser passados:
 
 ? extends Tipo: Garante que o tipo seja Tipo ou uma subclasse dele, o que é útil quando você deseja ler dados.
+
 ![imagem_extends](./img_extends.jpeg)
 
 ? super Tipo: Garante que o tipo seja Tipo ou uma superclasse dele, o que é útil quando você deseja adicionar dados.
+
 ![imagem_extends](./img_super.jpeg)
 
 Exemplo com ? extends:
