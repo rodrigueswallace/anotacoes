@@ -164,29 +164,29 @@ Neste exemplo, equals e hashCode são sobrescritos para garantir que dois objeto
 
 A principal diferença entre Set e ArrayList em Java está em como eles tratam os elementos e as suas características principais:
 
-1. **Duplicação de Elementos **
+1. **Duplicação de Elementos**
 - Set: Não permite elementos duplicados. Se você tentar adicionar um elemento que já existe no Set, ele não será adicionado.
 - ArrayList: Permite elementos duplicados. Você pode adicionar o mesmo elemento várias vezes, e cada ocorrência será armazenada.
 
-2. **Ordem dos Elementos **
+2. **Ordem dos Elementos**
 - Set: Não garante a ordem dos elementos. Dependendo da implementação, a ordem dos elementos pode ser imprevisível (HashSet), pode seguir a ordem de inserção (LinkedHashSet), ou ser ordenada de acordo com a ordem natural ou um comparador (TreeSet).
 - ArrayList: Mantém a ordem dos elementos na mesma sequência em que foram adicionados.
 
-3. **Eficiência **
+3. **Eficiência**
 - Set: É geralmente mais rápido para operações de busca e remoção quando comparado a ArrayList, especialmente em grandes coleções, porque usa um mecanismo baseado em hashing ou árvore (dependendo da implementação).
 - ArrayList: Pode ser menos eficiente para busca e remoção, especialmente quando o tamanho da lista é grande, porque estas operações podem exigir que muitos elementos sejam movidos.
 
-4. **Implementações Comuns **
+4. **Implementações Comuns**
 
 - Set: Implementações incluem HashSet, LinkedHashSet, e TreeSet.
 - ArrayList: ArrayList é uma das implementações da interface List.
 
-5. **Uso Típico **
+5. **Uso Típico**
 
 - Set: Ideal para coleções onde a unicidade dos elementos é importante, como conjuntos matemáticos ou coleções de IDs únicos.
 - ArrayList: Ideal para listas ordenadas onde você pode querer acessar elementos por índice ou manter uma lista de itens que pode conter duplicatas.
 
-**Resumo Prático: **
+**Resumo Prático:**
 - Use Set quando você precisar garantir que não haja elementos duplicados e não se importar com a ordem.
 - Use ArrayList quando a ordem dos elementos for importante e duplicatas forem permitidas.
 
