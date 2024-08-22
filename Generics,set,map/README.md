@@ -119,7 +119,7 @@ public void adicionarNumero(List<? super Integer> lista) {
 ````
 
 
-** Generics Delemitado **
+**Generics Delemitado**
 
 Generics delimitados permitem definir restrições nos tipos que podem ser usados como parâmetros genéricos. Existem dois tipos principais de limites:
 
