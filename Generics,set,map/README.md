@@ -1,5 +1,21 @@
 # Generics,set,map
 
+**Resumo simples sobre cada um dos conceitos:**
+
+- Generics: Em Java, os Generics permitem que você crie classes, interfaces e métodos que funcionam com qualquer tipo de dado, mantendo a segurança de tipos. Em vez de especificar um tipo específico, você usa um placeholder (por exemplo, <T>) que será substituído por um tipo real quando a classe ou o método for usado.
+
+- Set: Set é uma coleção que não permite elementos duplicados. Ele só armazena valores únicos e não mantém uma ordem específica dos elementos.
+
+- Map: Map é uma coleção que associa chaves a valores. Cada chave deve ser única, mas diferentes chaves podem mapear para o mesmo valor. Um exemplo é o HashMap, que é muito usado para implementar dicionários.
+
+- Generics delimitado: É quando você define um limite superior ou inferior para os tipos que podem ser usados em um Generics. Por exemplo, List<? extends Number> aceita qualquer tipo que seja uma subclasse de Number.
+
+- Tipos coringa: São usados com ? para indicar um tipo desconhecido. Por exemplo, List<?> significa uma lista de algum tipo desconhecido.
+
+- Coringa delimitado: Um coringa delimitado impõe restrições no tipo que o ? pode assumir. Pode ser delimitado por um tipo superior (<? extends Tipo>) ou inferior (<? super Tipo>), controlando quais tipos podem ser usados.
+
+- HashCode e equals: hashCode e equals são métodos usados para comparar objetos em Java. O equals verifica se dois objetos são iguais, enquanto o hashCode retorna um número inteiro que representa o objeto. Se dois objetos são iguais, eles devem ter o mesmo hashCode. Isso é importante para coleções como HashSet e HashMap, onde a eficiência depende desses métodos.
+
 ## o que são Generics,set e map ?
 
 1. **Generics**
@@ -18,6 +34,7 @@ public class Caixa<T> {
       return item;
   }
 }
+````
 
 Aqui, a classe Caixa pode armazenar qualquer tipo de objeto, garantindo que o tipo correto seja utilizado em tempo de compilação.
 
@@ -35,6 +52,7 @@ Set<String> conjunto = new HashSet<>();
 conjunto.add("A");
 conjunto.add("B");
 conjunto.add("A"); // Duplicado, não será adicionado
+````
 
 3. **Map**
 
@@ -49,6 +67,7 @@ Map<String, Integer> mapa = new HashMap<>();
 mapa.put("Alice", 25);
 mapa.put("Bob", 30);
 Integer idade = mapa.get("Alice"); // Retorna 25
+````
 
 
 ## Tipos Coringa
@@ -65,6 +84,7 @@ public void imprimirLista(List<?> lista) {
       System.out.println(obj);
     }
 }
+````
 
 Aqui, List<?> pode ser uma lista de qualquer tipo.
 
@@ -75,9 +95,11 @@ Aqui, List<?> pode ser uma lista de qualquer tipo.
 UM coringa delimitado é uma versão específica dos tipos coringa. Eles permitem que você especifique limites para os tipos que podem ser passados:
 
 ? extends Tipo: Garante que o tipo seja Tipo ou uma subclasse dele, o que é útil quando você deseja ler dados.
+
 ![imagem_extends](./img_extends.jpeg)
 
 ? super Tipo: Garante que o tipo seja Tipo ou uma superclasse dele, o que é útil quando você deseja adicionar dados.
+
 ![imagem_extends](./img_super.jpeg)
 
 Exemplo com ? extends:
@@ -87,15 +109,17 @@ public void processar(List<? extends Number> numeros) {
       System.out.println(num);
   }
 }
+````
 
 Exemplo com ? super:
 ```Java
 public void adicionarNumero(List<? super Integer> lista) {
     lista.add(10);
 }
+````
 
 
-** Generics Delemitado **
+**Generics Delemitado**
 
 Generics delimitados permitem definir restrições nos tipos que podem ser usados como parâmetros genéricos. Existem dois tipos principais de limites:
 
@@ -108,6 +132,7 @@ Exemplo com Limite Superior:
 public <T extends Number> void imprimirNumeros(T numero) {
   System.out.println(numero);
 }
+````
 
 Aqui, T pode ser Integer, Double, ou qualquer outra subclasse de Number.
 
@@ -116,6 +141,7 @@ Exemplo com Limite Inferior:
 public void adicionarNumero(List<? super Integer> lista) {
   lista.add(10);
 }
+````
 
 Aqui, a lista pode aceitar Integer ou qualquer superclasse de Integer, como Number ou Object.
 
@@ -148,6 +174,7 @@ public class Pessoa {
         return Objects.hash(nome, idade);
     }
 }
+````
 
 Neste exemplo, equals e hashCode são sobrescritos para garantir que dois objetos Pessoa sejam comparados corretamente e armazenados de forma eficiente em coleções baseadas em hash.
 
@@ -155,29 +182,29 @@ Neste exemplo, equals e hashCode são sobrescritos para garantir que dois objeto
 
 A principal diferença entre Set e ArrayList em Java está em como eles tratam os elementos e as suas características principais:
 
-1. **Duplicação de Elementos **
+1. **Duplicação de Elementos**
 - Set: Não permite elementos duplicados. Se você tentar adicionar um elemento que já existe no Set, ele não será adicionado.
 - ArrayList: Permite elementos duplicados. Você pode adicionar o mesmo elemento várias vezes, e cada ocorrência será armazenada.
 
-2. **Ordem dos Elementos **
+2. **Ordem dos Elementos**
 - Set: Não garante a ordem dos elementos. Dependendo da implementação, a ordem dos elementos pode ser imprevisível (HashSet), pode seguir a ordem de inserção (LinkedHashSet), ou ser ordenada de acordo com a ordem natural ou um comparador (TreeSet).
 - ArrayList: Mantém a ordem dos elementos na mesma sequência em que foram adicionados.
 
-3. **Eficiência **
+3. **Eficiência**
 - Set: É geralmente mais rápido para operações de busca e remoção quando comparado a ArrayList, especialmente em grandes coleções, porque usa um mecanismo baseado em hashing ou árvore (dependendo da implementação).
 - ArrayList: Pode ser menos eficiente para busca e remoção, especialmente quando o tamanho da lista é grande, porque estas operações podem exigir que muitos elementos sejam movidos.
 
-4. **Implementações Comuns **
+4. **Implementações Comuns**
 
 - Set: Implementações incluem HashSet, LinkedHashSet, e TreeSet.
 - ArrayList: ArrayList é uma das implementações da interface List.
 
-5. **Uso Típico **
+5. **Uso Típico**
 
 - Set: Ideal para coleções onde a unicidade dos elementos é importante, como conjuntos matemáticos ou coleções de IDs únicos.
 - ArrayList: Ideal para listas ordenadas onde você pode querer acessar elementos por índice ou manter uma lista de itens que pode conter duplicatas.
 
-**Resumo Prático: **
+**Resumo Prático:**
 - Use Set quando você precisar garantir que não haja elementos duplicados e não se importar com a ordem.
 - Use ArrayList quando a ordem dos elementos for importante e duplicatas forem permitidas.
 
@@ -187,4 +214,4 @@ A principal diferença entre Set e ArrayList em Java está em como eles tratam o
 
 
 
-````
+
